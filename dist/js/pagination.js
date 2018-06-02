@@ -23,12 +23,12 @@ const paginationApp = new Vue({
                 this.pages.push(index);
             }
         },
-        paginate (filterResults) {
+        paginate (posts) {
             let page = this.page;
             let perPage = this.perPage;
-            var from = (page * perPage) - perPage;
-            var to = (page * perPage);
-            return  filterResults.slice(from, to);
+            let from = (page * perPage) - perPage;
+            let to = (page * perPage);
+            return  posts.slice(from, to);
         },
     },
     computed: {
