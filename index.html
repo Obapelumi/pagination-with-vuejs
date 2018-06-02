@@ -66,8 +66,8 @@
       
       <h1 class="text-center">POSTS</h1>
       <div class="album py-5 bg-light" id="pagination-app">
-        <div class="container">
-          <div class="row" v-cloak>
+        <div class="container" v-cloak>
+          <div class="row">
             <div class="col-md-4" v-for="post in displayedPosts">
               <div class="card mb-4 box-shadow post-cards">
                 <!-- <img class="card-img-top" src="dist/img/placeholder-blue-800x600px.png" alt="Card image cap"> -->
@@ -84,13 +84,13 @@
                 </div>
               </div>
             </div>
-            <div class="clearfix"></div>
-            <div class="btn-group col-md-2 offset-md-5">
-                <button type="button" class="btn btn-sm btn-outline-secondary" v-if="page != 1" @click="page--"> << </button>
-                <button type="button" class="btn btn-sm btn-outline-secondary" v-for="pageNumber in pages.slice(page-1, page+5)" @click="page = pageNumber"> {{pageNumber}} </button>
-                <button type="button" @click="page++" v-if="page < pages.length" class="btn btn-sm btn-outline-secondary"> >> </button>
-            </div>
           </div>
+          
+          <div class="clearfix btn-group col-md-2 offset-md-5">
+            <button type="button" class="btn btn-sm btn-outline-secondary" v-if="page != 1" @click="page--"> << </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" v-for="pageNumber in pages.slice(page-1, page+5)" @click="page = pageNumber"> {{pageNumber}} </button>
+            <button type="button" @click="page++" v-if="page < pages.length" class="btn btn-sm btn-outline-secondary"> >> </button>
+        </div>
         </div>
       </div>
 
